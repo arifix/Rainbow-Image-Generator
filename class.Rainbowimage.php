@@ -46,9 +46,8 @@ class Rainbowimage {
 			echo "Maximum {$this->allowedsize} MB Allowed";
 		}
 		else{
+			$this->generateImage();
 		}
-
-		$this->generateImage();
 	}
 
 	public function generateImage(){
