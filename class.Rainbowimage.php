@@ -36,18 +36,18 @@ class Rainbowimage {
 
 	public function validateImage(){
 		if(empty($this->filename)){
-			$this->message = "Please select a Image";
+			echo "Please select a Image";
 		}
 		elseif(!in_array($this->fileext, $this->allowedext)){
 			$allow = implode(", ", $this->allowedext);
-			$this->message = "Only {$allow} is allowed";
+			echo "Not a Image or Only {$allow} is allowed";
 		}
 		elseif($this->filesize > ($this->allowedsize * 1024 * 1000)){
 			echo "Maximum {$this->allowedsize} MB Allowed";
 		}
 		else{
 			$this->generateImage();
-		}
+		}		
 	}
 
 	public function generateImage(){
