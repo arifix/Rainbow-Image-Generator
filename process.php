@@ -4,3 +4,4 @@
 	if(isset($_POST['submit'])){
 		$result = new Rainbowimage();
 	}
+
