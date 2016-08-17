@@ -9,14 +9,14 @@ class Rainbowimage {
 
 	public $imagename;
 
-	public $imagedimension;
-	public $imagewidth;
-	public $imageheight;
-	public $uploaddir = "uploads"; // Upload Directory Name
-	public $allowedext = ['jpg', 'png', 'jpeg']; // Allowed Extension
-	public $allowedwidth = 5000; // Maximum Allowed Image Width - 5000(5000px)
-	public $allowedheight = 3000; // Maximum Allowed Image Height - 3000(3000px)
-	public $allowedsize = 10; // Maximum Allowed Image Size 10 = 10MB(10 Megabyte)
+	private $imagedimension;
+	private $imagewidth;
+	private $imageheight;
+	private $uploaddir = "uploads"; // Upload Directory Name
+	private $allowedext = ['jpg', 'png', 'jpeg']; // Allowed Extension
+	private $allowedwidth = 5000; // Maximum Allowed Image Width - 5000(5000px)
+	private $allowedheight = 3000; // Maximum Allowed Image Height - 3000(3000px)
+	private $allowedsize = 10; // Maximum Allowed Image Size 10 = 10MB(10 Megabyte)
 
 	public function __construct(){
 		$this->filename = $_FILES['upload']['name'];
@@ -32,7 +32,7 @@ class Rainbowimage {
 		$this->validateImage();
 	}
 
-	public function validateImage(){
+	private function validateImage(){
 		if(empty($this->filename)){
 			echo "Please select a Image";
 		}
@@ -48,7 +48,7 @@ class Rainbowimage {
 		}		
 	}
 
-	public function generateImage(){
+	private function generateImage(){
 		$file = $this->filetmpname;
 		$ext = pathinfo($file, PATHINFO_EXTENSION);
 
@@ -90,10 +90,9 @@ class Rainbowimage {
 		$this->showResult();
 	}
 
-	public function showResult(){
+	private function showResult(){
 		$download = "<button class=\"btn btn-primary\" onclick=\"window.open('{$this->uploaddir}/Rainbow_{$this->imagename}.png')\">Download Image</button>";
 		$image = "<img src=\"{$this->uploaddir}/Rainbow_{$this->imagename}.png\" alt=\"$this->imagename\" class=\"img-responsive\" />";							
 		echo "<p>{$download}</p><p>$image</p>";
 	}
 }
-
