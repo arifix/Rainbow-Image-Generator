@@ -1,8 +1,6 @@
 <?php
 
 class Rainbowimage {
-	public $message; // Show all error messages
-
 	public $filename;
 	public $filetype;
 	public $filetmpname;
