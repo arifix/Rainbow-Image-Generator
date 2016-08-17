@@ -99,3 +99,4 @@ class Rainbowimage {
 		echo "<p>{$download}</p><p>$image</p>";
 	}
 }
+
