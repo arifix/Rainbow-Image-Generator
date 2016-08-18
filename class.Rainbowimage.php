@@ -91,8 +91,8 @@ class Rainbowimage {
 	}
 
 	private function showResult(){
-		$download = "<button class=\"btn btn-primary\" onclick=\"window.open('{$this->uploaddir}/Rainbow_{$this->imagename}.png')\">Download Image</button>";
-		$image = "<img src=\"{$this->uploaddir}/Rainbow_{$this->imagename}.png\" alt=\"$this->imagename\" class=\"img-responsive\" />";							
-		echo "<p>{$download}</p><p>$image</p>";
+		$result = "<p><button class=\"btn btn-primary\" onclick=\"window.open('{$this->uploaddir}/Rainbow_{$this->imagename}.png')\">Download Image</button>";
+		$result .= "<p><img src=\"{$this->uploaddir}/Rainbow_{$this->imagename}.png\" alt=\"$this->imagename\" class=\"img-responsive\" /></p>";							
+		echo $result;
 	}
 }
